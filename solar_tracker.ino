@@ -32,4 +32,70 @@ void setup() {
     OCR1B = 3600;  // Vertical servo
     }
 
+void loop() {
+    // Read analog values from LDR sensors
+    topleft = analogRead(A0);
+    topright = analogRead(A1);
+    downleft = analogRead(A2);
+    downright = analogRead(A3);
+    
+    // Horizontal tracking logic
+    if (topleft > topright) {
+        OCR1A = OCR1A + 1;
+        delay(waittime);
+    }
+    
+    if (downleft > downright) {
+        OCR1A = OCR1A + 1;
+        delay(waittime);
+    }
+    
+    if (topleft < topright) {
+        OCR1A = OCR1A - 1;
+        delay(waittime);
+    }
+    
+    if (downleft < downright) {
+        OCR1A = OCR1A - 1;
+        delay(waittime);
+    }
+    
+    // Horizontal servo limits
+    if (OCR1A > 4000) {
+        OCR1A = 4000;
+    }
+    if (OCR1A < 2000) {
+        OCR1A = 2000;
+    }
+    
+    // Vertical tracking logic
+    if (topleft > downleft) {
+        OCR1B = OCR1B - 1;
+        delay(waittime);
+    }
+    
+    if (topright > downright) {
+        OCR1B = OCR1B - 1;
+        delay(waittime);
+    }
+    
+    if (topleft < downleft) {
+        OCR1B = OCR1B + 1;
+        delay(waittime);
+    }
+    
+    if (topright < downright) {
+        OCR1B = OCR1B + 1;
+        delay(waittime);
+    }
+    
+    // Vertical servo limits
+    if (OCR1B > 4200) {
+        OCR1B = 4200;
+    }
+    if (OCR1B < 3000) {
+        OCR1B = 3000;
+    }
+    }
+
 
