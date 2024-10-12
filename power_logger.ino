@@ -50,3 +50,51 @@ void setup() {
     
     sei();
     }
+void loop() {
+    if (triggered) {
+        // Read sensor values
+        ina219values();
+        
+        // Log data to file
+        writeFile();
+        
+        // Update display only when values change
+        if(loadvoltage != oldvolt){
+        displayline(loadvoltage, 0, " V");
+        oldvolt = loadvoltage;
+        }
+        
+        if(current_mA != oldcurr){
+        displayline(current_mA, 2, " mA");
+        oldcurr = current_mA;
+        }
+        
+        if(power_mW != oldpow){
+        displayline(power_mW, 4, " mW");
+        oldpow = power_mW;
+        }
+        
+        if(energy_mWh != oldegy){
+        displayline(energy_mWh, 6, " mWh");
+        oldegy = energy_mWh;
+        }
+        
+        triggered = false;
+    }
+    }
+
+    // Timer interrupt service routine
+ISR(TIMER1_COMPA_vect){
+    triggered = true;
+    }
+
+    // Display function for OLED
+void displayline(const float measurement, const uint8_t line_num, const char line_end[]) {
+    char floatbuf[16]={0};
+    
+    dtostrf(measurement, 10, 3, floatbuf);
+    strcat(floatbuf, line_end);
+    
+    display.setCursor(0, line_num);
+    display.print(floatbuf);
+    }
