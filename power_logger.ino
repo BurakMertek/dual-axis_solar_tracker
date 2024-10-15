@@ -98,3 +98,41 @@ void displayline(const float measurement, const uint8_t line_num, const char lin
     display.setCursor(0, line_num);
     display.print(floatbuf);
     }
+void ina219values() {
+    float shuntvoltage = 0.0;
+    float busvoltage = 0.0;
+    
+    // Turn the INA219 on
+    ina219.powerSave(false);
+    
+    shuntvoltage = ina219.getShuntVoltage_mV();
+    busvoltage = ina219.getBusVoltage_V();
+    current_mA = ina219.getCurrent_mA();
+    elapsed = millis();
+    
+    // Turn the INA219 off to save power
+    ina219.powerSave(true);
+    
+    loadvoltage = busvoltage + (shuntvoltage / 1000.0);
+    power_mW = loadvoltage * current_mA;
+    
+    // Compute energy consumed (t = elapsed[ms] / 3600[s/h] * 1000[ms/s])
+    energy_mWh += power_mW * (elapsed / 3600000.0);
+    }
+
+    // Write data to SD card (requires SD card module)
+void writeFile() {
+    char buf[32], voltbuf[16]={0}, curbuf[16]={0};
+    
+    dtostrf(loadvoltage, 10, 3, voltbuf);
+    dtostrf(current_mA, 10, 3, curbuf);
+    
+    // Format CSV line: time,voltage,current\n
+    sprintf(buf, "%ld,%s,%s\n", elapsed, voltbuf, curbuf);
+    
+    // Write to file (implementation depends on SD library setup)
+    // measurFile.write(buf);
+    
+    // Sync to SD card periodically
+    // if(cycles >= 9) measurFile.sync();
+    }
