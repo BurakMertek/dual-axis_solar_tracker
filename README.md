@@ -65,7 +65,7 @@ The project is fully open-source (hardware, firmware and 3-D models) and can be 
 
 <sub>Total ≈ **€30** (2025 retail)</sub>
 
-Full schematic and part links are in **`/hardware`**.:contentReference[oaicite:0]{index=0}
+Full schematic and part links are in **`/hardware`**.
 
 ---
 
@@ -128,7 +128,7 @@ Full schematic and part links are in **`/hardware`**.:contentReference[oaicite:0
   The diminutive panel saturates around noon; bigger panels are current-limited by the battery charger. A full-size rooftop system can see 25 – 30 % yearly gain, but this desktop model is optimised for demonstration and low cost.
 </details>
 
-Further plots and raw data are in **`docs/performance_data.md`**.:contentReference[oaicite:1]{index=1}
+Further plots and raw data are in **`docs/performance_data.md`**.
 
 ---
 
@@ -161,7 +161,7 @@ Feel free to open an issue if you are interested in tackling one of these tasks!
 - **Burak Metin Mertek** *(maintainer)*  
 <br>Supervisor: **Prof. Dr. Zıyodulla Yusupov**
 
-Special thanks to everyone who tested prototypes and provided feedback.:contentReference[oaicite:2]{index=2}
+Special thanks to everyone who tested prototypes and provided feedback.
 
 ---
 
