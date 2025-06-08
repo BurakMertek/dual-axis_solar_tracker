@@ -78,8 +78,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Supervisor**: Prof. Dr. Zıyodulla YUSUPOV
 
-**Institution**: Karabük University, Faculty of Engineering, Electrical-Electronics Engineering Department
 
 ## Acknowledgments
 
-Special thanks to Karabük University for supporting this research project and providing the necessary resources for development and testing.
+Special thanks to  Prof. Dr. Zıyodulla YUSUPOV for supporting this research project and providing the necessary resources for development and testing.
