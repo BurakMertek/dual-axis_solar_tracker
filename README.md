@@ -7,24 +7,9 @@
 -->
 
 
-# Dual-Axis Solar Tracker
 
 A compact, **Arduino Nano–powered**, dual-axis platform that keeps a solar panel perpendicular to sunlight throughout the day, boosting energy yield by up to **40 %** compared with fixed mounting systems.  
 The project is fully open-source (hardware, firmware and 3-D models) and can be adapted to larger arrays or educational demonstrations.
-
----
-
-## Table of Contents
-1. [Key Features](#key-features)  
-2. [Bill of Materials](#bill-of-materials)  
-3. [Repository Layout](#repository-layout)  
-4. [Quick Start](#quick-start)  
-5. [Calibration & Operation](#calibration--operation)  
-6. [Performance](#performance)  
-7. [Contributing](#contributing)  
-8. [Roadmap](#roadmap)  
-9. [Authors & Credits](#authors--credits)  
-10. [License](#license)  
 
 ---
 
