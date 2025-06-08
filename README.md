@@ -6,16 +6,6 @@
   © 2025 Burak Mertek & contributors
 -->
 
-<p align="center">
-  <img src="docs/assets/hero_solar_tracker.jpg" width="650" alt="Dual-Axis Solar Tracking System">
-</p>
-
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License MIT"></a>
-  <img src="https://img.shields.io/github/languages/top/BurakMertek/dual-axis_solar_tracker" alt="Top language">
-  <img src="https://img.shields.io/github/last-commit/BurakMertek/dual-axis_solar_tracker" alt="Last commit">
-  <!-- Add a CI badge when a workflow is available -->
-</p>
 
 # Dual-Axis Solar Tracker
 
